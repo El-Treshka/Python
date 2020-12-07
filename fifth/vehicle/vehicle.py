@@ -2,6 +2,7 @@ import fifth.part.energy_source as es
 import fifth.part.engine as e
 import fifth.part.gear as g
 import fifth.vehicle.driveable as d
+import math
 
 
 class Vehicle(d.Driveable):
@@ -25,7 +26,7 @@ class Vehicle(d.Driveable):
 
     def brake(self):
         while self.__speed != 0:
-            self.__speed = self.__speed - (self.__speed / 2)
+            self.__speed = self.__speed - math.ceil(self.__speed / 2)
             if self.__speed == 1:
                 self.__speed = 0
             print("speed: ", self.__speed, " km/h")
